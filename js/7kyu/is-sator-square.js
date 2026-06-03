@@ -52,58 +52,58 @@
 
 
 
-function isSatorSquare(tablet) {
-  let ary = [];
-  let res = true;
-  for (let i = 0; i < tablet.length; i++) {
-    if (res == true) {
-      tablet[0].forEach((element, ii) => {
-        ary.push(tablet[ii][i]);
-      });
-      if (JSON.stringify(ary) === JSON.stringify(tablet[i])) {
-        res = true;
-      } else {
-        res = false;
-      }
-      ary = [];
-    }
-  }
+// function isSatorSquare(tablet) {
+//   let ary = [];
+//   let res = true;
+//   for (let i = 0; i < tablet.length; i++) {
+//     if (res == true) {
+//       tablet[0].forEach((element, ii) => {
+//         ary.push(tablet[ii][i]);
+//       });
+//       if (JSON.stringify(ary) === JSON.stringify(tablet[i])) {
+//         res = true;
+//       } else {
+//         res = false;
+//       }
+//       ary = [];
+//     }
+//   }
 
-  let newAry = [];
-  for (let i = tablet.length - 1; i >= 0; i--) {
-    let a = [];
-    for (let j = tablet[i].length - 1; j >= 0; j--) {
-      a.push(tablet[i][j]);
-    }
-    newAry.push(a);
-    a = [];
-  }
+//   let newAry = [];
+//   for (let i = tablet.length - 1; i >= 0; i--) {
+//     let a = [];
+//     for (let j = tablet[i].length - 1; j >= 0; j--) {
+//       a.push(tablet[i][j]);
+//     }
+//     newAry.push(a);
+//     a = [];
+//   }
 
-  let res1 = true;
-  for (let i = 0; i < newAry.length; i++) {
-    if (JSON.stringify(newAry[i]) === JSON.stringify(tablet[i]) && res1 == true) {
-      res1 = true;
-    } else {
-      res1 = false;
-    }
-  }
+//   let res1 = true;
+//   for (let i = 0; i < newAry.length; i++) {
+//     if (JSON.stringify(newAry[i]) === JSON.stringify(tablet[i]) && res1 == true) {
+//       res1 = true;
+//     } else {
+//       res1 = false;
+//     }
+//   }
 
-  return res && res1 ? true : false;
-}
+//   return res && res1 ? true : false;
+// }
+
+// // console.log(
+// //   isSatorSquare([
+// //     ["T", "E", "N"],
+// //     ["E", "Y", "E"],
+// //     ["N", "E", "T"],
+// //   ]),
+// // );
 
 // console.log(
 //   isSatorSquare([
-//     ["T", "E", "N"],
-//     ["E", "Y", "E"],
-//     ["N", "E", "T"],
+//     ["P", "A", "R", "T"],
+//     ["A", "G", "A", "R"],
+//     ["R", "A", "G", "A"],
+//     ["T", "R", "A", "M"],
 //   ]),
 // );
-
-console.log(
-  isSatorSquare([
-    ["P", "A", "R", "T"],
-    ["A", "G", "A", "R"],
-    ["R", "A", "G", "A"],
-    ["T", "R", "A", "M"],
-  ]),
-);
